@@ -64,7 +64,7 @@ func (c *Country) SubDivisions() (subdivisions []SubDivision) {
 	return c.subdivisions
 }
 
-// FindSubdivisionByName fincs a country by given name
+// FindSubdivisionByName finds a subdivision by given name
 func (c *Country) FindSubdivisionByName(name string) (result SubDivision, err error) {
 	s, exists := c.nameToSubdivision[strings.ToLower(name)]
 	if !exists {
@@ -73,7 +73,7 @@ func (c *Country) FindSubdivisionByName(name string) (result SubDivision, err er
 	return s, nil
 }
 
-// FindSubdivisionByCode fincs a country by given code
+// FindSubdivisionByCode finds a subdivision by given code
 func (c *Country) FindSubdivisionByCode(code string) (result SubDivision, err error) {
 	s, exists := c.codeToSubdivision[strings.ToLower(code)]
 	if !exists {

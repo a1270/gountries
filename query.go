@@ -15,7 +15,7 @@ type Query struct {
 	Alpha3ToAlpha2 map[string]string
 }
 
-// FindCountryByName fincs a country by given name
+// FindCountryByName finds a country by given name
 func (q *Query) FindCountryByName(name string) (result Country, err error) {
 	lowerName := strings.ToLower(name)
 	alpha2, exists := q.NameToAlpha2[lowerName]
@@ -25,7 +25,7 @@ func (q *Query) FindCountryByName(name string) (result Country, err error) {
 	return q.Countries[alpha2], nil
 }
 
-// FindCountryByAlpha fincs a country by given code
+// FindCountryByAlpha finds a country by given code
 func (q *Query) FindCountryByAlpha(code string) (result Country, err error) {
 	codeU := strings.ToUpper(code)
 	switch {
