@@ -32,7 +32,7 @@ func (q *Query) FindCountryByAlpha(code string) (result Country, err error) {
 	case len(code) == 2:
 		country, exists := q.Countries[codeU]
 		if !exists {
-			return Country{}, makeError("Could not find country with code %s", code)
+			return Country{}, makeError("Could not find country with code", code)
 		}
 		return country, nil
 	case len(code) == 3:
